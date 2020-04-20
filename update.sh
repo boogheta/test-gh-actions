@@ -7,6 +7,8 @@ date +%s > data
 cat data
 
 echo "Running git add"
+git config --local user.email "action@github.com"
+git config --local user.name "GitHub Action"
 git add data
 
 echo "Running git commit"
