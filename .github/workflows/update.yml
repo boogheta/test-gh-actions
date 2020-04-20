@@ -1,0 +1,22 @@
+name: AutoUpdates
+
+on:
+  schedule:
+    - cron:  '*/5 * * * *'
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: Run update script
+      run: |
+        echo "TEST update"
+        update.sh
+        echo "UPDATED!"
+        cat data
+        git status
