@@ -16,7 +16,8 @@ jobs:
     - name: Run update script
       run: |
         echo "TEST update"
-        update.sh
+        pwd && ls
+        ./update.sh
         echo "UPDATED!"
         cat data
         git status
